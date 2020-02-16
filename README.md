@@ -17,7 +17,7 @@ samples, guidance on mobile development, and a full API reference.
 <table>
   <tr>
     <td align="center"><a href="https://www.linkedin.com/in/athena-siaotong/"><img src="https://avatars3.githubusercontent.com/u/48605689?v=4" width="100px;" alt="Athena Siaotong"/><br /><sub><b>Athena Siaotong</b></sub></a><br /><a href="https://github.com/athsiao/language-like-you/commits?author=athsiao" title="Code & Design">💻🎨</a></td>
-    <td align="center"><a href="https://www.linkedin.com/in/kacey-su-351950176/"><img src="https://avatars3.githubusercontent.com/u/61095270?s=460&v=4" width="100px;" alt="Kacey Su"/><br /><sub><b>Kacey Su</b></sub></a><br /><a href="#ideas-kaceysu" title="Code">💻</a></td>
+    <td align="center"><a href="https://www.linkedin.com/in/kacey-su-351950176/"><img src="https://avatars3.githubusercontent.com/u/61095270?s=460&v=4" width="100px;" alt="Kacey Su"/><br /><sub><b>Kacey Su</b></sub></a><br /><a href="#research-kaceysu" title="Research">📚</a></td>
   </tr>
 </table>
 
