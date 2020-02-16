@@ -23,10 +23,20 @@ class Splash extends StatelessWidget {
         appBar: AppBar(
           title: Text('Welcome to Flutter'),
         ),
-        body: Center(
-          child: Image(
+        body: Column(
+          children: <Widget>[
+            // logo
+            Image(
               image: AssetImage('assets/logo.png'),
             ),
+            FlatButton(
+              onPressed: () {
+                print("Pressed continue");
+              },
+              child: Text("Click me"),
+              color: Colors.pink[600],
+            ),
+          ]
         ),
       );
   }
