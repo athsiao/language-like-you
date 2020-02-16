@@ -1,3 +1,5 @@
+<a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"><img src="https://github.com/athsiao/language-like-you/blob/master/lly/assets/logo.png?raw=true" alt="LLY logo!"></a>
+
 # Language Like You!
 
 A language learning application.
