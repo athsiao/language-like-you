@@ -132,11 +132,35 @@ class _LearningTestState extends State<LearningTest> {
   int _3counter = 0;
 
   List<String> questions = [
-    "one",
-    "two",
-    "three",
-    "four",
-    "five",
+    "You're a photographer looking to improve your skills. How do you go about it?",
+    "In a new place, how do you find your way around?",
+    "Which activity is most appealing?",
+    "When you picture a cat, what do you do?",
+    "What's the best way to learn how a computer or video game works?",
+  ];
+
+  List<String> optionOne = [
+    "Examine a diagram of a camera",
+    "Look for a map",
+    "A story with pictures",
+    "Picture a cat in your mind",
+    "Watch someone else",
+  ];
+
+  List<String> optionTwo = [
+    "Ask questions about photography",
+    "Ask someone for directions",
+    "An audio book",
+    "Say the word 'cat' to yourself",
+    "Listen to an explanation",
+  ];
+
+  List<String> optionThree = [
+    "Practice using a camera on your own",
+    "Use surrounding buildings as a reference point",
+    "A word search",
+    "Think about being a cat",
+    "Experiment until you figure it out"
   ];
 
   int _questionNumber = 0;
@@ -145,13 +169,31 @@ class _LearningTestState extends State<LearningTest> {
     setState(() {
       _questionNumber++;
       if (_questionNumber == 5) {
-        Navigator.push(
+        _seeResults();
+      }
+    });
+  }
+
+  void _seeResults() {
+    if (_1counter >= _2counter && _1counter >= _3counter) {
+      Navigator.push(
           context,
           MaterialPageRoute(builder: (context) => Splash()),
         );
-        print("Test concluded");
-      }
-    });
+        print("Visual learner concluded");
+    } else if (_2counter >= _1counter && _2counter >= _3counter) {
+      Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => Splash()),
+        );
+        print("Auditory learner concluded");
+    } else {
+      Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => Splash()),
+        );
+        print("Logical learner concluded");
+    }
   }
 
   void _incrementCounter1() {
@@ -192,7 +234,7 @@ class _LearningTestState extends State<LearningTest> {
                 _nextQuestion(); //move on
               },
             child: Text(
-                  "Option 1",
+                  optionOne[_questionNumber],
                   style: TextStyle(
                     color: Colors.pink[900],
                     fontFamily: 'Moon2.0',
@@ -210,7 +252,7 @@ class _LearningTestState extends State<LearningTest> {
                 _nextQuestion(); //move on
               },
             child: Text(
-                  "Option 2",
+                  optionTwo[_questionNumber],
                   style: TextStyle(
                     color: Colors.pink[900],
                     fontFamily: 'Moon2.0',
@@ -228,7 +270,7 @@ class _LearningTestState extends State<LearningTest> {
                 _nextQuestion();//move on
               },
             child: Text(
-                  "Option 3",
+                  optionThree[_questionNumber],
                   style: TextStyle(
                     color: Colors.pink[900],
                     fontFamily: 'Moon2.0',
