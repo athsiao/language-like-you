@@ -25,7 +25,7 @@ class Splash extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
         color: Colors.white,
-        padding: EdgeInsets.symmetric(horizontal: 80, vertical: 250),
+        padding: EdgeInsets.symmetric(horizontal: 80, vertical: 20),
         child: Column(
           children: <Widget>[
             // logo
@@ -519,10 +519,30 @@ class _HomeState extends State<Home> {
 
             Row( // first row
               children: <Widget>[
-                Image(
+
+                FlatButton(
+                  child: Image(
                   image: AssetImage('assets/lessons/intro.png'),
                   width: 100,
                   ),
+                  onPressed: () {
+                    if (learnerType == 1) {
+                      print("Auditory continue");
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => Exercise1()),
+                      );
+                    } else if (learnerType == 0) {
+                      print("Visual continue");
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => Exercise2()),
+                      );
+                    } else {
+                      // do nothing, logical activity goes here
+                    }
+                  }
+                ),
                 Image(
                   image: AssetImage('assets/lessons/greeting.png'),
                   width: 100,
@@ -634,4 +654,233 @@ class _HomeState extends State<Home> {
   }
 }
 
+// AUDITORY EXERCISE -------------------------------------------------------
+
+class Exercise1 extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+        color: Colors.white,
+        padding: EdgeInsets.symmetric(horizontal: 80, vertical: 150),
+        child: Column(
+          children: <Widget>[
+            // logo
+            Image(
+              image: AssetImage('assets/sound-on.png'),
+              width: 200,
+            ),
+            Container(
+              padding: EdgeInsets.symmetric(vertical: 20),
+              child: FlatButton(
+                onPressed: () {
+                  print("Listening");
+
+                  // Play audio
+                  //Navigator.push(
+                  //  context,
+                  //  MaterialPageRoute(builder: (context) => Welcome()),
+                  //);
+                },
+                child: Text(
+                  "press to listen",
+                  style: TextStyle(
+                    color: Colors.pink[900],
+                    fontFamily: 'Moon2.0',
+                  )
+                ),
+                padding: EdgeInsets.symmetric(vertical: 10, horizontal: 75),
+                color: Colors.pink[50],
+              ),
+            ),
+
+            Container(
+              child: FlatButton(
+                onPressed: () {
+                  print("Speaking");
+                  Navigator.push(
+                    context,
+                    // Evaluate user's pronounciation
+                    MaterialPageRoute(builder: (context) => Audio2()),
+                  );
+                },
+                child: Text(
+                  "press to record",
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontFamily: 'Moon2.0',
+                  )
+                ),
+                padding: EdgeInsets.symmetric(vertical: 10, horizontal: 75),
+                color: Colors.pink[600],
+              ),
+            ),
+
+          ]
+        ),
+      );
+  }
+}
+
+class Audio2 extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+        color: Colors.white,
+        padding: EdgeInsets.symmetric(horizontal: 80, vertical: 150),
+        child: Column(
+          children: <Widget>[
+            // logo
+            Container(
+              padding: EdgeInsets.only(top: 20),
+              child: Image(
+                        image: AssetImage('assets/good.png'),
+                        width: 200,
+              )
+            ),
+
+            Text("Good job!",
+              style: TextStyle(
+                fontFamily: 'Moon2.0-Regular',
+                fontSize: 30,
+                color: Colors.pink[600],
+                fontWeight: FontWeight.w400,
+              )
+            ),
+
+            Container(
+              padding: EdgeInsets.symmetric(vertical: 20),
+              child: FlatButton(
+                onPressed: () {
+                  print("Going back");
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => Home()),
+                  );
+                },
+                child: Text(
+                  "continue",
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontFamily: 'Moon2.0',
+                  )
+                ),
+                padding: EdgeInsets.symmetric(vertical: 10, horizontal: 75),
+                color: Colors.pink[600],
+              ),
+            ),
+
+          ]
+        ),
+      );
+  }
+}
+
 // VISUAL EXERCISE -------------------------------------------------------
+
+class Exercise2 extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+        color: Colors.white,
+        padding: EdgeInsets.symmetric(horizontal: 80, vertical: 150),
+        child: Column(
+          children: <Widget>[
+            // gif
+            Image(
+              image: AssetImage('assets/ni.gif'),
+              width: 200,
+            ),
+
+            Padding(
+              padding: EdgeInsets.symmetric(vertical: 20),
+              child: Text("nǐ - you (informal)\nWatch carefully...",
+                style: TextStyle(
+                  color: Colors.pink[900],
+                  fontFamily: 'Moon2.0-Regular',
+                  fontWeight: FontWeight.w400,
+                  fontSize: 20,
+                )
+              )
+            ),
+
+            Container(
+              child: FlatButton(
+                onPressed: () {
+                  print("Speaking");
+                  Navigator.push(
+                    context,
+                    // Evaluate user's pronounciation
+                    MaterialPageRoute(builder: (context) => Visual2()),
+                  );
+                },
+                child: Text(
+                  "continue",
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontFamily: 'Moon2.0',
+                  )
+                ),
+                padding: EdgeInsets.symmetric(vertical: 10, horizontal: 75),
+                color: Colors.pink[600],
+              ),
+            ),
+
+          ]
+        ),
+      );
+  }
+}
+
+class Visual2 extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+        color: Colors.white,
+        padding: EdgeInsets.symmetric(horizontal: 80, vertical: 150),
+        child: Column(
+          children: <Widget>[
+            // gif
+            Image(
+              image: AssetImage('assets/panel.png'),
+              width: 200,
+            ),
+
+            Padding(
+              padding: EdgeInsets.symmetric(vertical: 20),
+              child: Text("Copy the previous character",
+                style: TextStyle(
+                  color: Colors.pink[900],
+                  fontFamily: 'Moon2.0-Regular',
+                  fontWeight: FontWeight.w400,
+                  fontSize: 20,
+                )
+              )
+            ),
+
+            Container(
+              child: FlatButton(
+                onPressed: () {
+                  print("Drawing");
+                  Navigator.push(
+                    context,
+                    // Evaluate user's pronounciation
+                    MaterialPageRoute(builder: (context) => Home()),
+                  );
+                },
+                child: Text(
+                  "compare",
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontFamily: 'Moon2.0',
+                  )
+                ),
+                padding: EdgeInsets.symmetric(vertical: 10, horizontal: 75),
+                color: Colors.pink[600],
+              ),
+            ),
+
+          ]
+        ),
+      );
+  }
+}
